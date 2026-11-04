@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "users/getAllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "getAllUsersDto",
+        "Type": "AuthUserAPI.Models.DTOs.GetAllUsers",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserController",
+    "Method": "NewUser",
+    "RelativePath": "users/newUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUserDto",
+        "Type": "AuthUserAPI.Models.DTOs.NewUserDTOs",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
