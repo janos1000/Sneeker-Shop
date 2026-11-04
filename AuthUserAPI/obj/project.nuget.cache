@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "YTaFAJgpIBw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\birinyij\\Desktop\\BJZ_13b\\Backend\\SneekerShop\\AuthUserAPI\\AuthUserAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\birinyij\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "C:\\Users\\birinyij\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512",
+    "C:\\Users\\birinyij\\.nuget\\packages\\scalar.aspnetcore\\2.18.7\\scalar.aspnetcore.2.18.7.nupkg.sha512"
+  ],
+  "logs": []
+}
