@@ -1,16 +1,100 @@
 [
   {
-    "ContainingType": "AuthUserAPI.Controllers.UserController",
-    "Method": "GetAllUsers",
-    "RelativePath": "users/getAllUsers",
+    "ContainingType": "AuthUserAPI.Controllers.RolesController",
+    "Method": "AllRoles",
+    "RelativePath": "roles/allRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.RolesController",
+    "Method": "RoleById",
+    "RelativePath": "roles/byId",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "getAllUsersDto",
-        "Type": "AuthUserAPI.Models.DTOs.GetAllUsers",
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.RolesController",
+    "Method": "DeleteRole",
+    "RelativePath": "roles/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.RolesController",
+    "Method": "NewRole",
+    "RelativePath": "roles/newRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newRoleDto",
+        "Type": "AuthUserAPI.Models.DTOs.NewRoleDtos",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserController",
+    "Method": "AllUsers",
+    "RelativePath": "users/allUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserController",
+    "Method": "UserById",
+    "RelativePath": "users/byId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "users/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -26,6 +110,27 @@
       {
         "Name": "newUserDto",
         "Type": "AuthUserAPI.Models.DTOs.NewUserDTOs",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "users/update",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "updatedUserDto",
+        "Type": "AuthUserAPI.Models.DTOs.UpdateUserDTOs",
         "IsRequired": true
       }
     ],
