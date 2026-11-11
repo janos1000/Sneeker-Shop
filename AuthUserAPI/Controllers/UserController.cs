@@ -5,6 +5,7 @@ using AuthUserAPI.Models.DTOs;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.EntityFrameworkCore;
+using AuthUserAPI.Services;
 
 namespace AuthUserAPI.Controllers
 {
@@ -14,20 +15,27 @@ namespace AuthUserAPI.Controllers
     {
         private readonly AuthuserContext _context;
 
-        public UserController(AuthuserContext context)
+        private readonly PasswordHasher _password;
+
+
+        public UserController(AuthuserContext context, PasswordHasher password)
         {
             _context = context;
+            _password = password;
         }
 
         [HttpPost("newUser")]
         public async Task<IActionResult> NewUser([FromBody] NewUserDTOs newUserDto)
         {
+            var (pass, salt) = _password.HashPassword(newUserDto.Password);
+
             var user = new User
             {
                 Id = Guid.NewGuid(),
                 Name = newUserDto.Name,
                 Email = newUserDto.Email,
-                Password = newUserDto.Password
+                Password = pass,
+                Salt = salt,
             };
 
             if (user is not null)

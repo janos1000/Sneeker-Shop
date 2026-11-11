@@ -102,9 +102,19 @@ namespace AuthUserAPI.Controllers
         }
 
         [HttpGet("userByIdAndRoles")]
-        public async Task<IActionResult> UserRolesById([FromQuery] Guid userId)
+        public async Task<IActionResult> UserRolesByIdAndRoles([FromQuery] Guid id)
         {
-            
+            var user = await _context.Users
+                .Select(u => new
+            {
+                    u.Id,
+                    u.Name,
+                    UserRoles = u.Roles
+                    .Select(r => r.Name).ToList()
+                })
+                .SingleOrDefaultAsync(u => u.Id == id);
+
+            return Ok(user);
         }
     }
 }
