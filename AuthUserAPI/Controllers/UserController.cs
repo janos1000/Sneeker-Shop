@@ -106,5 +106,24 @@ namespace AuthUserAPI.Controllers
             }
             return StatusCode(400, new { message = "Hiba.", result = user });
         }
-    }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UserLoginDTOs userLoginDtos)
+        {
+            var login = await _context.Users.SingleOrDefaultAsync(u => u.Name == userLoginDtos.Name);
+
+            if (login is null)
+            {
+                return StatusCode(404, new { message = "A felhasználó nem található." });
+            }
+
+            var isValid = _password.Verify(userLoginDtos.Password, login.Password, login.Salt);
+
+            if (isValid)
+            {
+                return StatusCode(200, new { message = "Sikeres bejelentkezés.", result = login });
+            }
+            return StatusCode(401, new { message = "Hibás jelszó vagy név.", result = login });
+        }
+    } 
 }
