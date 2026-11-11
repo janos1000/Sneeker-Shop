@@ -58,6 +58,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthUserAPI.Controllers.UserRoleController",
+    "Method": "AssignRole",
+    "RelativePath": "userrole/assignRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUserRoleDto",
+        "Type": "AuthUserAPI.Models.DTOs.NewUserRoleDTOs",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserAPI.Controllers.UserRoleController",
+    "Method": "RemoveRole",
+    "RelativePath": "userrole/removeRole",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUserRoleDto",
+        "Type": "AuthUserAPI.Models.DTOs.NewUserRoleDTOs",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthUserAPI.Controllers.UserController",
     "Method": "AllUsers",
     "RelativePath": "users/allUsers",
